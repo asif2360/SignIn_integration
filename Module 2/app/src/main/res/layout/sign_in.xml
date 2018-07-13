@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_image"
+    tools:context="com.example.asif2.signin.SignIn">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        app:title="Sign In"
+        app:titleTextColor="#fff"
+        android:background="#0f80d2">
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <ImageView
+        android:id="@+id/imageGoogle"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="45dp"
+        app:srcCompat="@drawable/google" />
+
+    <TextView
+        android:id="@+id/textGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageGoogle"
+        android:layout_alignBottom="@id/imageGoogle"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:background="@null"
+        android:textSize="18sp"
+        android:paddingLeft="6dp"
+        android:textColor="#030303"
+        android:layout_toEndOf="@+id/imageGoogle"
+        android:text="Google" />
+
+    <ImageView
+        android:id="@+id/imageLinkedin"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textGoogle"
+        android:layout_alignBottom="@id/textGoogle"
+        android:layout_marginEnd="102dp"
+        app:srcCompat="@drawable/linkedin_icon" />
+
+    <TextView
+        android:id="@+id/textLinkedin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/imageLinkedin"
+        android:layout_alignTop="@+id/imageLinkedin"
+        android:layout_alignBottom="@id/imageLinkedin"
+         android:layout_marginStart="40dp"
+
+        android:text="LinkedIn"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageLinkedin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textSize="14sp"
+        android:textColor="#d10b0b"
+        android:text="OR" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignStart="@+id/imageGoogle"
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/phone" />
+
+    <EditText
+        android:id="@+id/editTextMob"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_alignEnd="@+id/textLinkedin"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView"
+        android:hint="Mob No"
+        android:ems="10"
+        android:textSize="16sp"
+        android:inputType="phone" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_below="@+id/editTextMob"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/email" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_alignEnd="@id/editTextMob"
+        android:layout_alignStart="@+id/editTextMob"
+        android:layout_alignTop="@+id/imageView4"
+        android:layout_toEndOf="@+id/imageView4"
+        android:hint="Email (Optional)"
+        android:textSize="16sp"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_alignStart="@+id/imageView4"
+        android:layout_below="@+id/editTextEmail"
+        android:layout_marginTop="25dp"
+        app:srcCompat="@drawable/password" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_alignEnd="@+id/editTextEmail"
+        android:layout_alignTop="@+id/imageView5"
+        android:layout_toEndOf="@+id/imageView5"
+        android:hint="Password"
+        android:ems="10"
+        android:textSize="16sp"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/buttonsign"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_alignEnd="@id/editTextPassword"
+        android:layout_alignStart="@id/imageView5"
+        android:layout_below="@+id/editTextPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="#077ec2"
+        android:text="@string/sign_in"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/loginheretext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonsign"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:text="@string/login_here"
+        android:textSize="14sp"
+        android:textColor="#000"
+         />
+
+
+</RelativeLayout>

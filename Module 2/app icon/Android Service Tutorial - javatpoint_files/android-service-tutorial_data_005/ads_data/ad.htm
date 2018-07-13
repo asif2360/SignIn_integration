@@ -1,0 +1,321 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
+    @font-face {
+        font-family: 'AlwynNewRd';
+        src: url('https://s.hcurvecdn.com/fonts/AlwynNewRd-Rg.otf');
+    }
+</style> 
+<style type="text/css">
+
+	#box{
+		width: 336px;
+		height: 280px;
+		position: absolute;
+		overflow: hidden;
+		left:0px;
+		top:0px;
+		font-family: "AlwynNewRd";
+		user-select: none;
+		border:.1px solid;
+		cursor: pointer
+	}
+	.background{
+		width: 336px;
+		height: 280px;
+		position: absolute;
+		background-image: url("https://s.hcurvecdn.com/voot/timeout/Timeout_336x280_v1.png");
+		background-size: cover;
+		overflow: hidden;
+    	background-position: center;
+    	background-repeat: no-repeat;
+    	/*background-color: #f7f900;*/
+	}
+	a{
+	    text-decoration: none;
+	}
+	
+	.list-item{
+		position: relative;
+		width:336px;
+		display: inline-block;
+		background: white;
+		height:189px;
+	}
+	.img{
+		height:189px;
+		width:100%;
+		background-size: cover;
+    	background-position: center;
+    	background-repeat: no-repeat;
+    	text-align: center;
+	}
+	.heading{
+		font-size: 10px;
+		background: #fcc7d4;
+		width: 100%;
+		text-align: left;
+		padding-top: 0px;
+		font-weight:500;
+		color: black;
+		letter-spacing: .3px
+	}
+	
+	.item-name{
+		width: 175px;
+		font-size: 16px;
+		text-align: left;
+		padding: 2px 0px 0px 0px;
+		height: 40px;
+		display: -webkit-box;
+        margin: 2px auto;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        color: black;
+        font-weight: 500;
+	}
+	
+	.grid {
+	    flex:1;
+	    display:flex;
+	    justify-content:space-between;
+	    flex-direction:column;
+	}
+	
+@keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0,-4px,0);
+  }
+}
+
+.bounce {
+  animation-name: bounce;
+  transform-origin: center bottom;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+</style>
+</head><body>
+<div id="template" style="display:none">
+	<div class="background" style="z-index:100;pointer-events:none"> </div>
+	<div gdn-repeat="items" rows="1" cols="1" class="grid" style="margin:0px;margin-top:25px">
+    	<div class="list-item" onclick="openUrl(event,'$(self_url)')" style="height:250px">
+		  <div style="position:relative;margin-top:5px">
+			<div class="img" style="z-index:1000;background-image:url($(self_image))"></div>
+			<div class="item-name" style="z-index:100;left:6px;text-align:left;position:absolute;top:198px">$(self_heading)</div>
+		  </div>
+		</div>
+		
+	</div>
+
+
+
+</div>
+<div id="box">
+	<div class="background" style="z-index:100;pointer-events:none"> </div>
+	<div gdn-repeat="items" rows="1" cols="1" class="grid" style="margin:0px;margin-top:25px"><div style="display:flex;justify-content:space-between">
+    	<div class="list-item" onclick="openUrl(event,'https://www.voot.com/shows/time-out/1/547323/can-you-hit-pause-on-life-/550984')" style="height:250px">
+		  <div style="position:relative;margin-top:5px">
+			<div class="img" style="z-index:1000;background-image:url(https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_480,h_270/kimg/kimg/f7903c41905a4fe7b591b81f8910e3aa_1280X720.jpg)"></div>
+			<div class="item-name" style="z-index:100;left:6px;text-align:left;position:absolute;top:198px">Collision course and collateral damage</div>
+		  </div>
+		</div>
+		
+	</div></div>
+
+
+
+</div>
+
+<script type="text/javascript">
+    
+    var _items = [{
+        image:'https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_480,h_270/kimg/kimg/1dda2c82c63d4fcfb615fd5c3e2cc4e0_1280X720.jpg',
+        url:'https://www.voot.com/shows/time-out/1/547323/can-you-hit-pause-on-life-/550980',
+        heading: 'Can you hit pause on life?'
+    },{
+        image:'https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_480,h_270/kimg/kimg/88ceb50c0f404713bfbdc1ec3154c643_1280X720.jpg',
+        url:'https://www.voot.com/shows/time-out/1/547323/can-you-hit-pause-on-life-/550981',
+        heading: 'Baby or Bae?'
+    },{
+        image:'https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_480,h_270/kimg/kimg/433bd44dd9e2423c99a4b7b7eb70b801_1280X720.jpg',
+        url:'https://www.voot.com/shows/time-out/1/547323/can-you-hit-pause-on-life-/550982',
+        heading: 'On a sabbatical, from marriage!'
+    },{
+        image:'https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_480,h_270/kimg/kimg/c5f3a06860c24661b8f0f4e603e2933d_1280X720.jpg',
+        url:'https://www.voot.com/shows/time-out/1/547323/can-you-hit-pause-on-life-/550983',
+        heading: 'It&#39s official! We&#39re on a break'
+    },{
+        image:'https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_480,h_270/kimg/kimg/f7903c41905a4fe7b591b81f8910e3aa_1280X720.jpg',
+        url:'https://www.voot.com/shows/time-out/1/547323/can-you-hit-pause-on-life-/550984',
+        heading: 'Collision course and collateral damage'
+    },{
+        image:'https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_480,h_270/kimg/kimg/7282ad7e1d704923aeca642854493d45_1280X720.jpg',
+        url:'https://www.voot.com/shows/time-out/1/547323/can-you-hit-pause-on-life-/550985',
+        heading: 'Will he, won&#39t he?'
+    }]
+    var json = {"adtag":"54efcdc6","bcamp":"notset","browser":"notset","btag":"notset","campaign":"none","cid":"1999","click_macro":"https://googleads.g.doubleclick.net/dbm/clk?sa=L\u0026ai=CuuDb-0ZLWqzwM8zt2ASAl4WoD-L7pOdP6Y6OqIsG8C4QASCuz5AoYOWCgICkDqABodiDkQPIAQmpAjUgXpXj3FA-qAMBqgTDAU_QO0X7gP8HATc61HbDi_Zkb_r7xBh1aOhpw1odPnETnRqXZruEUYP-BTgpJBuRs62NwE25tslxnNyBYwwpyYB9LWZCV6NkBcMrjG34VZqoEzwJ4g3_oLsj--3aLZrZKf6_pyW7i1sOsYpBW9Y4v41Q-b-MI5Ze5osLNRZLhSfJ9T_SPHJQNIeQd5adZz6Az7kLqhVhh-e8d8Zp1t1Qd25vOkyKifaHg99mj3_lI45kQrbrZz6DheuOqZ06W0EU3cfUjuAEA5AGAaAGTYAHx6f8bqgHpr4b2AcA0ggHCIABEAEYAoAKAcgTu6ioAtgTEA\u0026num=1\u0026cid=CAASEuRoJDAtgt_owrFYgHfzRAZ-1A\u0026sig=AOD64_1DsGZPNyD1bGhkTfs1kvbmL4CnMA\u0026client=ca-pub-4699858549023382\u0026dbm_c=AKAmf-Dcmpvkpa2yznVo2QV_Bnqane-D_nMBVMJSBbLmdhxDdQOaJWp5mOjtD6j9zjEn7Q5G39EA\u0026dbm_d=AKAmf-CqbReTejMq04XUx-6QROsbSaaU4g4DJxfKih9fB8TNZjwwsSkNxYrmhK3C6V7CfGbrOtI46nRTndT3PfX5263u3tL0UpMPcCY_rFdUrid4qgnB3-TS3lg9J1QzFdT6n3tq5mwhgvjg8QonlF22_K5C5xftRh6-WwJDfY4Vdb8ZejYYKDpi9grQxuIxRN9wgXLRsfRo\u0026adurl=","client":"voot","creativedata":"{}","device":"desktop","dimension":"336x280","domain":"notset","fcat":"timeout","hcid":"9959c082ec6e00a2c06def00c2a699ec","partner":"dbm","pdata":"{}","stats":"eyJhZHRhZyI6IjU0ZWZjZGM2IiwiYmNhbXAiOiJub3RzZXQiLCJicm93c2VyIjoibm90c2V0IiwiYnRhZyI6Im5vdHNldCIsImNhbXBhaWduIjoibm9uZSIsImNpZCI6IjE5OTkiLCJjbGllbnQiOiJ2b290IiwiZGV2aWNlIjoiZGVza3RvcCIsImRpbWVuc2lvbiI6IjMzNngyODAiLCJkb21haW4iOiJub3RzZXQiLCJmY2F0IjoidGltZW91dCIsImhjaWQiOiI5OTU5YzA4MmVjNmUwMGEyYzA2ZGVmMDBjMmE2OTllYyIsInBhcnRuZXIiOiJkYm0iLCJ0b2tlbl9pZCI6ImJiNGZmNDZiN2UxNTZlZjdlZjVmZTNlY2NhYjJlMTVlIn0=","token_id":"bb4ff46b7e156ef7ef5fe3eccab2e15e","udata":"{}"};
+    function shuffle(array) {
+      if(!array.length) return [];
+      var currentIndex = array.length, temporaryValue, randomIndex;
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+      return array;
+    }
+    Number.prototype.formatMoney = function(c, d, t){
+    var n = this, 
+        c = isNaN(c = Math.abs(c)) ? 2 : c, 
+        d = d == undefined ? "." : d, 
+        t = t == undefined ? "," : t, 
+        s = n < 0 ? "-" : "", 
+        i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", 
+        j = (j = i.length) > 3 ? j % 3 : 0;
+       return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "").replace(".00","");
+     };
+    var listitems = ""
+    var creativedata = [];
+    try{
+        var creativedata = shuffle(JSON.parse(json['pdata'].replace(",]","]")))
+    }catch(e){
+        creativedata = [];
+    }
+    var staticdata = shuffle(_items);
+    for(var i=0;i<staticdata.length;i++){
+        creativedata.push(staticdata[i])
+    }
+    var finaldata = []
+    for(var i=0;i<creativedata.length;i++){
+        finaldata.push(creativedata[i])
+    }
+    creativedata = finaldata;
+    function format(str,data){
+  return str.replace(/\$\([^\)]*\)/g,function(m,n){
+    var key = m.substr(2,m.length-3)
+    return data[key]==undefined? m : data[key]
+  })
+}
+
+
+window.onAdData = function(data){
+  var template = document.getElementById("template")
+  var box = document.getElementById("box")
+  box.innerHTML = template.innerHTML
+  var repeats = document.querySelectorAll("#box [gdn-repeat]");
+  console.log(repeats)
+  for(var i=0;i<repeats.length;i++){
+    var repeat = repeats[i];
+    var key = repeat.getAttribute("gdn-repeat")
+    var template = repeat.innerHTML;
+    var nrows = repeat.getAttribute("rows")
+    var ncols = repeat.getAttribute("cols")
+    if(data[key]){
+      var html = ""
+      for(var r=0;r<nrows;r++){
+          var row = ""
+          for(var c=0;c<ncols;c++){
+            var obj = {}
+            var index = (r*ncols+c)%data[key].length
+            for(var k in data[key][index]){
+              obj["self_"+k] = data[key][index][k];
+            }
+            row += format(template,obj)
+          }
+          html += `<div style='display:flex;justify-content:space-between'>`+row+`</div>`
+      }
+      repeat.innerHTML = html
+    }
+  }
+  box.innerHTML = format(box.innerHTML,data)
+}
+onAdData({items:creativedata})
+
+function openUrl(e,url){
+    e.preventDefault()
+    e.stopPropagation()
+    // url = url.split("?")[0]
+    if(url.indexOf('utm_source')==-1){
+        var token = "?"
+        if(url.indexOf('?')!=-1) token='&';
+        url += token+"utm_source=dbm&utm_medium=cpm&utm_campaign=hockeycurve_TimeOut_desktop"
+    }
+    if(window.location.href.indexOf('=mobile')!=-1){
+        url = url.replace('_desktop','_mobile')
+    }
+    var target = json['click_macro'];
+    if(target){
+        url = "https://ad.hockeycurve.com/clk.php?redirect="+encodeURIComponent(url)+"&tracking="+encodeURIComponent(target)+"&stats="+encodeURIComponent(json['stats'])+"&token_id="+encodeURIComponent(json['token_id']);
+    }
+    window.open(url,"_blank")
+}
+ window.onclick = function(event){
+     console.log(event)
+     openUrl(event,"https://www.voot.com/shows/time-out/1/547323/can-you-hit-pause-on-life-/550985")
+}
+var count = 0
+function anim(){
+    count += 1
+    if (count > 10)return;
+    var first = creativedata[0]
+    creativedata = creativedata.slice(1,creativedata.length)
+    creativedata.push(first)
+    onAdData({items:creativedata})
+    setTimeout(anim,3000)
+}
+anim()
+
+var trigger_iframe = function(src){
+    try{
+        var body = document.getElementsByTagName('body')[0];
+        var iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.style['display'] = 'none'
+        body.appendChild(iframe);
+    }
+    catch(e){exception(e)}
+}
+var ishover = false;
+var triggered = false;
+function triggerHover(){
+    if(ishover && !triggered && json['click_macro']){
+        triggered = true;
+        trigger_iframe("piggyback?redirect=hcid&token_id="+json["token_id"]);
+        trigger_iframe("hover?redirect=hcid&stats="+json["stats"]+"&token_id="+json["token_id"]);
+    }
+}
+window.addEventListener("mouseover",function(){
+    if(!ishover){
+        ishover = true;
+        setTimeout(triggerHover,2000)
+    }
+})
+window.addEventListener("mouseout",function(){
+    ishover = false;
+})
+
+</script>
+<a target="_blank" href="http://hockeycurve.com/optout.html"><div style="font-size:10px;position:absolute;right:0px;top:0px;z-index:10000;cursor:pointer;">
+    <img src="../../android-service-tutorial_data_007/ads_data/ad_data/logo.png" title="optout">
+</div></a>
+</body></html>

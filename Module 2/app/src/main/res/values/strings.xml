@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Sign In</string>
+    <string name="login_here"><![CDATA[Login here]]></string>
+    <string name="sign_in">Sign In</string>
+    <string name="log_in">Log In</string>
+    <string name="forget_pass">forget password?</string>
+</resources>

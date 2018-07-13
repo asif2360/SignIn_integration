@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en"><head style="">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta style="" charset="utf-8"><title style="">Android Service Tutorial - javatpoint</title><link style="" rel="SHORTCUT ICON" href="https://www.javatpoint.com/images/logo/icon.png"><link style="" rel="stylesheet" type="text/css" href="Android%20Service%20Tutorial%20-%20javatpoint_files/link.css"><meta style="" name="keywords" content="android service tutorial,android, tutorial, examples, fundamentals, UI widgets, Activity and Intent, Fragments, Menu, Service, alarm manager, storage, sqlite, xml, json, multimedia, speech, web service, telephony, animation and graphics"><meta style="" name="description" content="Android Service Tutorial with examples of Activity and Intent, Fragments, Menu, Service, alarm manager, storage, sqlite, xml, json, multimedia, speech, web service, telephony, animation and graphics"><meta style="" name="viewport" content="width=device-width, initial-scale=1.0"><meta style="" name="apple-mobile-web-app-capable" content="yes"><meta style="" name="apple-mobile-web-app-status-bar-style" content="black"><link style="" rel="canonical" href="Android%20Service%20Tutorial%20-%20javatpoint_files/android-service-tutorial_009.htm">
+<meta style="" itemprop="name" content="Android Service Tutorial - javatpoint"><meta style="" itemprop="description" content="Android Service Tutorial with examples of Activity and Intent, Fragments, Menu, Service, alarm manager, storage, sqlite, xml, json, multimedia, speech, web service, telephony, animation and graphics"><meta style="" property="og:title" content="Android Service Tutorial - javatpoint"><meta style="" property="og:description" content="Android Service Tutorial with examples of Activity and Intent, Fragments, Menu, Service, alarm manager, storage, sqlite, xml, json, multimedia, speech, web service, telephony, animation and graphics">
+<meta style="" property="og:locale" content="en_US"><meta style="" property="og:type" content="article"><meta style="" name="twitter:title" property="og:title" content="Android Service Tutorial - javatpoint"><meta style="" name="twitter:description" property="og:description" content="Android Service Tutorial with examples of Activity and Intent, Fragments, Menu, Service, alarm manager, storage, sqlite, xml, json, multimedia, speech, web service, telephony, animation and graphics"><meta style="" property="og:url" content="https://www.javatpoint.com/android-service-tutorial"><meta style="" property="og:site_name" content="www.javatpoint.com"><meta style="" name="twitter:card" content="summary"><meta style="" name="twitter:site" content="@pagejavatpoint"><meta style="" name="twitter:domain" content="www.javatpoint.com"><meta style="" name="twitter:creator" content="@pagejavatpoint">
+<script style="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/adsbygoogle.js" type="text/javascript" async=""></script><script style="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/osd.js"></script><script style="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/pubads_impl_rendering_170.js"></script><script style="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/ads"></script><script style="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/ca-pub-4699858549023382.js"></script><script style="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/ga.js" async="" type="text/javascript"></script><script style="" async="async" src="Android%20Service%20Tutorial%20-%20javatpoint_files/gpt.js"></script>
+<script style="">
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script><link style="" href="Android%20Service%20Tutorial%20-%20javatpoint_files/integrator_002.js" rel="preload"><script style="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/integrator_002.js" type="text/javascript"></script><link style="" href="Android%20Service%20Tutorial%20-%20javatpoint_files/integrator.js" rel="preload"><script style="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/integrator.js" type="text/javascript"></script><script style="" async="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/pubads_impl_170.js"></script>
+
+<script style="">
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/13406045/javatpoint_cmda', [1, 1], 'div-gpt-ad-1512468834310-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<style style="" type="text/css">.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style><style style="" type="text/css">.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style><style style="" type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style style="" type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style style="" type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style style="" type="text/css">.dp-xml .cdata { color: #ff1493; }.dp-xml .tag, .dp-xml .tag-name { color: #069; font-weight: bold; }.dp-xml .attribute { color: red; }.dp-xml .attribute-value { color: blue; }</style><link style="" href="https://tpc.googlesyndication.com/safeframe/1-0-14/html/container.html" rel="prefetch"><script style="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/fi_client.js" async="" type="text/javascript"></script><script style="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/spc_fi.php" type="text/javascript"></script></head> 
+<body onload="highlightlink()"> 
+<!-- /13406045/javatpoint_cmda -->
+<div data-google-query-id="CKug8pzyuNgCFVIjaAoda4sIXQ" id="div-gpt-ad-1512468834310-0" style="height: 1px; width: 1px;">
+<script style="">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1512468834310-0'); });
+</script>
+<div style="border: 0pt none;" id="google_ads_iframe_/13406045/javatpoint_cmda_0__container__"><iframe srcdoc="" style="border: 0px none; vertical-align: bottom;" marginheight="0" marginwidth="0" scrolling="no" name="google_ads_iframe_/13406045/javatpoint_cmda_0" title="3rd party ad content" id="google_ads_iframe_/13406045/javatpoint_cmda_0" frameborder="0" height="1" width="1"></iframe></div></div>
+<button style="display: block;" onclick="topFunction()" id="myBtn" title="Go to top">⇧</button>
+<div id="page" style="margin:-8px;background-color:#f5f5f4;"><div id="container"> <div class="header"><!--<p style="font-weight:bold;padding:7px;color:white;background-color:gray;margin:0px"><marquee>JavaTpoint will be down for 2 to 4 hours tonight. Sorry for inconvenience.</marquee></p>-->
+
+<table style="width:100%;margin-bottom:5px"><tbody><tr><td><div id="headerlink" style="padding:0px;margin:0px"><span style="margin-right:20px;width:45%px"></span><span style="float:right;margin-right:5px;width:45%"> 
+
+</span>
+
+
+</div> </td></tr><tr><td>
+<div style="clear:both;float:left;width:230px;margin-top:-5px;margin-left:20px"><a href="https://www.javatpoint.com/"><img src="Android%20Service%20Tutorial%20-%20javatpoint_files/jtp_logo.png" alt="Javatpoint Logo"></a></div>
+
+<div style="float:left;width:60%;"><form class="navbar-search" method="get" action="https://www.google.com/search" target="_blank"> <input name="q" class="search-query span2" placeholder="Search on javatpoint..." title="Search on Javatpoint" type="text"><input style="" name="sitesearch" value="www.javatpoint.com" type="hidden"></form><!--<span style="margin-left:100px;color:orange;font-size:20px;font-weight:bold;">Happy </span><span style="color:red;font-size:20px;font-weight:bold;">New </span><span style="color:#666600;font-size:20px;font-weight:bold;">Year</span><span style="color:#666600;font-size:30px;font-weight:bold;"> 2015</span>--></div>
+
+</td></tr></tbody></table> </div>
+<div style="" class="headermobile">
+<div style="margin-top:10px;padding:0px;text-align:left;">
+<span style="float:left"><input src="Android%20Service%20Tutorial%20-%20javatpoint_files/menuhome64.png" onclick="showmenu()" type="image"></span>
+<span style="float:left"><a href="https://www.javatpoint.com/"><img src="Android%20Service%20Tutorial%20-%20javatpoint_files/jtp_logo.png" alt="Javatpoint Logo"></a></span>
+</div>
+<div style="margin:0px;padding:0px;clear:both"><form class="navbar-search-m" method="get" action="https://www.google.com/search" target="_blank"> <input name="q" class="search-query span2-m" placeholder="Search on javatpoint..." title="Search on Javatpoint" type="text"><input style="" name="sitesearch" value="www.javatpoint.com" type="hidden"></form></div></div>
+<div id="link" style="clear:both"> <div id="smoothmenu1" class="ddsmoothmenu">
+<ul>
+<li><a href="http://www.javatpoint.com/">Home</a></li>
+<li><a href="https://www.javatpoint.com/java-tutorial">Core Java</a></li>
+<li><a href="https://www.javatpoint.com/servlet-tutorial">Servlet</a></li>
+<li><a href="https://www.javatpoint.com/jsp-tutorial">JSP</a></li>
+<li><a href="https://www.javatpoint.com/struts-2-tutorial">Struts2</a></li>
+<li><a href="https://www.javatpoint.com/java-mail-api-tutorial">Mail API</a></li>
+<li><a href="https://www.javatpoint.com/hibernate-tutorial">Hibernate</a></li>
+<li><a href="https://www.javatpoint.com/spring-tutorial">Spring</a></li>
+<li><a href="https://www.javatpoint.com/android-tutorial" class="selected">Android</a></li>
+<li><a href="https://www.javatpoint.com/design-patterns-in-java">Design Pattern</a></li>
+<li><a href="https://www.javatpoint.com/examaccess">Quiz</a></li>
+<li><a href="https://www.javatpoint.com/free-java-projects">Projects</a></li>
+<li><a href="https://www.javatpoint.com/corejava-interview-questions">Interview Q</a>
+</li><li><a href="https://www.javatpoint.com/comment.jsp">Comment</a>
+</li><li><a href="https://www.javatpoint.com/forum">Forum</a>
+</li>
+</ul>
+<br style="clear: left">
+</div>
+
+</div><div class="mobilemenu" style="clear: both;"> </div>
+
+<div id="menu"><a target="_blank" href="http://training.javatpoint.com/android-training.jsp" class="training">Android Training</a> 
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android Tutorial</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-tutorial"><span>Android Introduction</span></a>
+<a href="https://www.javatpoint.com/android-what-where-and-why">What is Android</a>
+<a href="https://www.javatpoint.com/android-history-and-versions">History and Version</a>
+<a href="https://www.javatpoint.com/android-software-stack">Android Architecture</a>
+<a href="https://www.javatpoint.com/android-core-building-blocks">Core Building Blocks</a>
+<a href="https://www.javatpoint.com/android-emulator">Android Emulator</a>
+<a href="https://www.javatpoint.com/installing-softwares-for-android">Install Android</a>
+<a href="https://www.javatpoint.com/how-to-setup-android-for-eclipse-ide">Setup Eclipse</a>
+<a href="https://www.javatpoint.com/hello-android-example">Hello Android example</a>
+<a href="https://www.javatpoint.com/internal-details-of-hello-android-example">Internal Details</a>
+<a href="https://www.javatpoint.com/dalvik-virtual-machine">Dalvik VM</a>
+<a href="https://www.javatpoint.com/AndroidManifest-xml-file-in-android">AndroidManifest.xml</a>
+<a href="https://www.javatpoint.com/R-java-file-in-android">R.java</a>
+<a href="https://www.javatpoint.com/android-hide-title-bar-example">Hide Title Bar</a>
+<a href="https://www.javatpoint.com/android-screen-orientation-example">Screen Orientation</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android Widgets</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-ui-widgets-tutorial">UI Widgets</a>
+<a href="https://www.javatpoint.com/android-working-with-button">Working with Button</a>
+<a href="https://www.javatpoint.com/android-toast-example">Toast</a>
+<a href="https://www.javatpoint.com/android-custom-toast-example">Custom Toast</a>
+<a href="https://www.javatpoint.com/android-togglebutton-example">ToggleButton</a>
+<a href="https://www.javatpoint.com/android-checkbox-example">CheckBox</a>
+<a href="https://www.javatpoint.com/android-custom-checkbox">Custom CheckBox</a>
+<a href="https://www.javatpoint.com/android-radiobutton">RadioButton</a>
+<a href="https://www.javatpoint.com/android-dynamic-radiobutton">Dynamic RadioButton</a>
+<a href="https://www.javatpoint.com/android-custom-radiobutton">Custom RadioButton</a>
+<a href="https://www.javatpoint.com/android-alert-dialog-example">AlertDialog</a>
+<a href="https://www.javatpoint.com/android-spinner-example">Spinner</a>
+<a href="https://www.javatpoint.com/android-autocompletetextview-example">AutoCompleteTextView</a>
+<a href="https://www.javatpoint.com/android-listview-example">ListView</a>
+<a href="https://www.javatpoint.com/android-custom-listview">Custom ListView</a>
+<a href="https://www.javatpoint.com/android-rating-bar-example">RatingBar</a>
+<a href="https://www.javatpoint.com/android-webview-example">WebView</a>
+<a href="https://www.javatpoint.com/android-seekbar-example">SeekBar</a>
+<a href="https://www.javatpoint.com/android-datepicker-example">DatePicker</a>
+<a href="https://www.javatpoint.com/android-timepicker-example">TimePicker</a>
+<a href="https://www.javatpoint.com/android-analog-clock-and-digital-clock-example">Analog and Digital</a>
+<a href="https://www.javatpoint.com/android-progressbar-example">ProgressBar</a>
+<a href="https://www.javatpoint.com/android-scrollview-vertical">Vertical ScrollView</a>
+<a href="https://www.javatpoint.com/android-scrollview-horizontal">Horizontal ScrollView</a>
+<a href="https://www.javatpoint.com/android-image-switcher">ImageSwitcher</a>
+<a href="https://www.javatpoint.com/android-image-slider">ImageSlider</a>
+
+<!--
+<a href="android-edittext-example" >EditText</a>
+<a href="android-multiautocompletetextview-example" >MultiACTV</a>
+<a href="android-imagebutton-example" >ImageButton</a>
+<a href="android-radiobutton-example" >RadioButton</a>
+<a href="android-downloading-image-and-displyaing-using-imageview-example" >Downloading Image</a>
+<a href="android-mapview-example" >MapView</a>
+<a href="understanding-adapters-in-android" >Understanding Adapters</a>
+<a href="android-listview-example" >ListView</a>
+<a href="android-gridview-example" >GridView</a>
+<a href="android-multithreading-example" >Multithreading</a>
+<a href="android-puzzle-game-example" >PuzzleGame</a>
+-->
+</div>
+
+<!--
+<div class="leftmenu2"  >
+<a href="android-layout-managers"><span>Layout Managers</span></a>
+</div>
+
+<div class="leftmenu">
+<a href="android-linearlayout-example" >LinearLayout</a>
+<a href="android-relativelayout-example" >RelativeLayout</a>
+<a href="android-tablelayout-example" >TableLayout</a>
+<a href="android-framelayout-example" >FrameLayout</a>
+<a href="android-gridlayout-example" >GridLayout</a>
+</div>
+-->
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Activity and Intents</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-life-cycle-of-activity">Activity LifeCycle</a>
+<a href="https://www.javatpoint.com/android-intent-tutorial">Implicit Intent</a>
+<a href="https://www.javatpoint.com/android-explicit-intent-example">Explicit Intent</a>
+<a href="https://www.javatpoint.com/android-startactivityforresult-example">StartActivityForResult</a>
+<a href="https://www.javatpoint.com/android-share-app-data">Share App Data</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android Fragments</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-fragments"><span>Android Fragments</span></a>
+</div>
+
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android Menu</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-option-menu-example">Option Menu</a>
+<a href="https://www.javatpoint.com/android-context-menu-example">Context Menu</a>
+<a href="https://www.javatpoint.com/android-popup-menu-example">Popup Menu</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android Service</span></h2>
+</div>
+<div class="leftmenu">
+<a style="color: black;" href="https://www.javatpoint.com/android-service-tutorial"><strong>Android Service</strong> <img src="Android%20Service%20Tutorial%20-%20javatpoint_files/open-12.png" alt="open link"></a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android AlarmManager</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-alarmmanager"><span>Android AlarmManager</span></a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android Storage</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-preferences-example">Android Preferences</a>
+<a href="https://www.javatpoint.com/android-internal-storage-example">Internal Storage</a>
+<a href="https://www.javatpoint.com/android-external-storage-example">External Storage</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android SQLite</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-sqlite-tutorial">SQLite Tutorial</a>
+<a href="https://www.javatpoint.com/android-sqlite-example-with-spinner">SQLite Spinner</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">XML and JSON</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-xml-parsing-using-sax-parser">XML Parsing SAX</a>
+<a href="https://www.javatpoint.com/android-xml-parsing-using-dom-parser">XML Parsing DOM</a>
+<a href="https://www.javatpoint.com/android-XMLPullParser-tutorial">XMLPullParser</a>
+<a href="https://www.javatpoint.com/android-json-parsing-tutorial">JSON Parsing</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android Multimedia</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/playing-audio-in-android-example">MediaPlayer: Audio</a>
+<a href="https://www.javatpoint.com/playing-video-in-android-example">VideoView: Video</a>
+<a href="https://www.javatpoint.com/android-mediarecorder-example">Recording Media</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android Speech</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-texttospeech-tutorial">TextToSpeech1</a>
+<a href="https://www.javatpoint.com/android-texttospeech-example">TextToSpeech2</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android Telephony</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-telephony-manager-tutorial">TelephonyManager</a>
+<a href="https://www.javatpoint.com/android-call-state-example">Get Call State</a>
+<a href="https://www.javatpoint.com/android-call-state-broadcastreceiver-example">Get Call State 2</a>
+<a href="https://www.javatpoint.com/android-simple-caller-talker-example">Simple Caller Talker</a>
+<a href="https://www.javatpoint.com/how-to-make-a-phone-call-in-android">Phone Call</a>
+<a href="https://www.javatpoint.com/how-to-send-sms-in-android">Send SMS</a>
+<a href="https://www.javatpoint.com/how-to-send-email-in-android-using-intent">Send Email</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android Device</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-bluetooth-tutorial">Bluetooth Tutorial</a>
+<a href="https://www.javatpoint.com/android-bluetooth-list-paired-devices-example">List Paired Devices</a>
+<a href="https://www.javatpoint.com/android-wifi-example">WIFI</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Camera Tutorial</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-camera-tutorial">Camera Tutorial</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Sensor Tutorial</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-sensor-tutorial">Sensor Tutorial</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android Graphics</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-simple-graphics-example">Android Graphics</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android Animation</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-animation-example">Android Animation</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android Web Service</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-web-service">Android Web Service</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android Interview</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-interview-questions">Interview Questions</a>
+</div>
+<div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">Android Quiz</span></h2>
+</div>
+<div class="leftmenu">
+<a href="https://www.javatpoint.com/android-quiz">Android Quiz</a>
+</div>
+
+<table id="leftad"><tbody><tr><td><img src="Android%20Service%20Tutorial%20-%20javatpoint_files/wh.JPG" alt="space"></td></tr><tr><td>
+<script style="" async="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/adsbygoogle.js"></script> <ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="4476401222"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:160px;height:600px;" frameborder="0" height="600" width="160"></iframe></ins></ins></ins> <script style=""> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+</td></tr></tbody></table>
+
+</div><div class="onlycontent">
+
+
+<script style="" async="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/adsbygoogle.js"></script>
+<!-- CM_JTP_Leaderbaord -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle cm_jtp_leaderbaord" style="display: inline-block; width: 728px; height: 90px;" data-ad-client="ca-pub-4699858549023382" data-ad-slot="9201901915"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;width:728px;height:90px;" frameborder="0" height="90" width="728"></iframe></ins></ins></ins>
+<script style="">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div style="margin-left:0px;">
+<div id="city"> 
+<table>
+<tbody><tr><td>
+
+<div id="bottomnextup">
+<a class="next" href="https://www.javatpoint.com/android-alarmmanager">next →</a>
+<a class="next" href="https://www.javatpoint.com/android-popup-menu-example">← prev</a>
+
+</div>
+
+<h1 class="h1">Android Service Tutorial</h1>
+<img src="Android%20Service%20Tutorial%20-%20javatpoint_files/android-service.png" alt="android service" class="classhierarchy">
+
+<p><strong>Android service</strong> is a component that is <em>used to perform operations on the background</em> such as playing music, handle network transactions, interacting content providers etc. It doesn't has any UI (user interface).</p>
+<p>The service runs in the background indefinitely even if application is destroyed.</p>
+<p>Moreover, service can be bounded by a component to perform interactivity and inter process communication (IPC).</p>
+<p>The android.app.Service is subclass of ContextWrapper class.</p>
+<h4 class="n">Note: Android service is not a thread or separate process.</h4>
+<h2 class="h2">Life Cycle of Android Service</h2>
+<p>There can be two forms of a service.The lifecycle of service can follow two different paths: started or bound.</p>
+<ol>
+<li>Started</li>
+<li>Bound</li>
+</ol>
+
+<h4 class="h4">1) Started Service</h4>
+<p>A service is started when component (like activity) calls <b>startService()</b> method, now it runs in the background indefinitely. It is stopped by <b>stopService()</b> method. The service can stop itself by calling the <b>stopSelf()</b> method.</p>
+
+<h4 class="h4">2) Bound Service</h4>
+<p>A service is bound when another component (e.g. client) calls <b>bindService()</b> method. The client can unbind the service by calling the <b>unbindService()</b> method.</p>
+<p>The service cannot be stopped until all clients unbind the service.</p>
+
+<img src="Android%20Service%20Tutorial%20-%20javatpoint_files/service_lifecycle.png" alt="service lifecycle">
+<script style="" async="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/adsbygoogle.js"></script>
+<!-- CM_JTP_WTC_Responsive -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle cm_jtp_wtc_responsive" style="display: inline-block; width: 336px; height: 280px;" data-ad-client="ca-pub-4699858549023382" data-ad-slot="6746133113"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;width:336px;height:280px;" frameborder="0" height="280" width="336"></iframe></ins></ins></ins>
+<script style="">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<h4 class="h4">Understanding Started and Bound Service by background music example</h4>
+<p>Suppose, I want to play music in the background, so call 
+startService() method. But I want to get information of the current song
+ being played, I will bind the service that provides information about 
+the current song.</p>
+<hr>
+<h2 class="h2">Android Service Example</h2>
+<p>Let's see the example of service in android that plays an audio in 
+the background. Audio will not be stopped even if you switch to another 
+activity. To stop the audio, you need to stop the service.</p>
+
+<h4 class="h4">activity_main.xml</h4>
+<p>Drag the 3 buttons from the pallete, now the activity_main.xml will look like this:</p>
+<div id="filename">File: activity_main.xml</div>
+
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-xml" start="1"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">RelativeLayout</span><span>&nbsp;</span><span class="attribute">xmlns:androclass</span><span>=</span><span class="attribute-value">"http://schemas.android.com/apk/res/android"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">xmlns:tools</span><span>=</span><span class="attribute-value">"http://schemas.android.com/tools"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_width</span><span>=</span><span class="attribute-value">"match_parent"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_height</span><span>=</span><span class="attribute-value">"match_parent"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:paddingBottom</span><span>=</span><span class="attribute-value">"@dimen/activity_vertical_margin"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:paddingLeft</span><span>=</span><span class="attribute-value">"@dimen/activity_horizontal_margin"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:paddingRight</span><span>=</span><span class="attribute-value">"@dimen/activity_horizontal_margin"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:paddingTop</span><span>=</span><span class="attribute-value">"@dimen/activity_vertical_margin"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">tools:context</span><span>=</span><span class="attribute-value">".MainActivity"</span><span>&nbsp;</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">Button</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:id</span><span>=</span><span class="attribute-value">"@+id/buttonStart"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_width</span><span>=</span><span class="attribute-value">"wrap_content"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_height</span><span>=</span><span class="attribute-value">"wrap_content"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_alignParentTop</span><span>=</span><span class="attribute-value">"true"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_centerHorizontal</span><span>=</span><span class="attribute-value">"true"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_marginTop</span><span>=</span><span class="attribute-value">"19dp"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:text</span><span>=</span><span class="attribute-value">"Start&nbsp;Service"</span><span>&nbsp;</span><span class="tag">/&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">Button</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:id</span><span>=</span><span class="attribute-value">"@+id/buttonStop"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_width</span><span>=</span><span class="attribute-value">"wrap_content"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_height</span><span>=</span><span class="attribute-value">"wrap_content"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_above</span><span>=</span><span class="attribute-value">"@+id/buttonNext"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_alignRight</span><span>=</span><span class="attribute-value">"@+id/buttonStart"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_marginBottom</span><span>=</span><span class="attribute-value">"35dp"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:text</span><span>=</span><span class="attribute-value">"Stop&nbsp;Service"</span><span>&nbsp;</span><span class="tag">/&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">Button</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:id</span><span>=</span><span class="attribute-value">"@+id/buttonNext"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_width</span><span>=</span><span class="attribute-value">"wrap_content"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_height</span><span>=</span><span class="attribute-value">"wrap_content"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_alignLeft</span><span>=</span><span class="attribute-value">"@+id/buttonStop"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_centerVertical</span><span>=</span><span class="attribute-value">"true"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:text</span><span>=</span><span class="attribute-value">"Next&nbsp;Page"</span><span>&nbsp;</span><span class="tag">/&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">RelativeLayout</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea style="display: none;" name="code" class="xml">&lt;RelativeLayout xmlns:androclass="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" &gt;
+
+    &lt;Button
+        android:id="@+id/buttonStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:text="Start Service" /&gt;
+
+    &lt;Button
+        android:id="@+id/buttonStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonNext"
+        android:layout_alignRight="@+id/buttonStart"
+        android:layout_marginBottom="35dp"
+        android:text="Stop Service" /&gt;
+
+    &lt;Button
+        android:id="@+id/buttonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonStop"
+        android:layout_centerVertical="true"
+        android:text="Next Page" /&gt;
+
+&lt;/RelativeLayout&gt;
+</textarea></div>
+
+<hr>
+<h4 class="h4">activity_next.xml</h4>
+<p>It is the layout file of next activity.</p>
+
+<div class="filename">File: activity_next.xml</div>
+<p>It contains only one textview displaying the message Next Page</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-xml" start="1"><li class="alt"><span><span class="tag">&lt;</span><span class="tag-name">RelativeLayout</span><span>&nbsp;</span><span class="attribute">xmlns:androclass</span><span>=</span><span class="attribute-value">"http://schemas.android.com/apk/res/android"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">xmlns:tools</span><span>=</span><span class="attribute-value">"http://schemas.android.com/tools"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_width</span><span>=</span><span class="attribute-value">"match_parent"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_height</span><span>=</span><span class="attribute-value">"match_parent"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:paddingBottom</span><span>=</span><span class="attribute-value">"@dimen/activity_vertical_margin"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:paddingLeft</span><span>=</span><span class="attribute-value">"@dimen/activity_horizontal_margin"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:paddingRight</span><span>=</span><span class="attribute-value">"@dimen/activity_horizontal_margin"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:paddingTop</span><span>=</span><span class="attribute-value">"@dimen/activity_vertical_margin"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">tools:context</span><span>=</span><span class="attribute-value">".MainActivity"</span><span>&nbsp;</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">TextView</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:id</span><span>=</span><span class="attribute-value">"@+id/textView1"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_width</span><span>=</span><span class="attribute-value">"wrap_content"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_height</span><span>=</span><span class="attribute-value">"wrap_content"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_alignParentLeft</span><span>=</span><span class="attribute-value">"true"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_alignParentTop</span><span>=</span><span class="attribute-value">"true"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_marginLeft</span><span>=</span><span class="attribute-value">"96dp"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:layout_marginTop</span><span>=</span><span class="attribute-value">"112dp"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:text</span><span>=</span><span class="attribute-value">"Next&nbsp;Page"</span><span>&nbsp;</span><span class="tag">/&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">RelativeLayout</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea style="display: none;" name="code" class="xml">&lt;RelativeLayout xmlns:androclass="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" &gt;
+
+    &lt;TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="112dp"
+        android:text="Next Page" /&gt;
+
+&lt;/RelativeLayout&gt;
+</textarea></div>
+
+<hr>
+
+<h4 class="h4">Service class</h4>
+<p>Now create the service implemenation class by inheriting the Service class and overridding its callback methods.</p>
+
+<div class="filename">File: MyService.java</div>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="keyword">package</span><span>&nbsp;com.example.serviceexampleaudio;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;android.app.Service;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;android.content.Intent;&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;android.media.MediaPlayer;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;android.os.IBinder;&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;android.widget.Toast;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;MyService&nbsp;</span><span class="keyword">extends</span><span>&nbsp;Service&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;MediaPlayer&nbsp;myPlayer;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;<span class="annotation">@Override</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="keyword">public</span><span>&nbsp;IBinder&nbsp;onBind(Intent&nbsp;intent)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;</span><span class="keyword">null</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;<span class="annotation">@Override</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;onCreate()&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;Toast.makeText(<span class="keyword">this</span><span>,&nbsp;</span><span class="string">"Service&nbsp;Created"</span><span>,&nbsp;Toast.LENGTH_LONG).show();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;myPlayer&nbsp;=&nbsp;MediaPlayer.create(<span class="keyword">this</span><span>,&nbsp;R.raw.sun);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;myPlayer.setLooping(<span class="keyword">false</span><span>);&nbsp;</span><span class="comment">//&nbsp;Set&nbsp;looping</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;<span class="annotation">@Override</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;onStart(Intent&nbsp;intent,&nbsp;</span><span class="keyword">int</span><span>&nbsp;startid)&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;Toast.makeText(<span class="keyword">this</span><span>,&nbsp;</span><span class="string">"Service&nbsp;Started"</span><span>,&nbsp;Toast.LENGTH_LONG).show();&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;myPlayer.start();&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;<span class="annotation">@Override</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;onDestroy()&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;Toast.makeText(<span class="keyword">this</span><span>,&nbsp;</span><span class="string">"Service&nbsp;Stopped"</span><span>,&nbsp;Toast.LENGTH_LONG).show();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;myPlayer.stop();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><textarea style="display: none;" name="code" class="java">package com.example.serviceexampleaudio;
+
+import android.app.Service;
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.os.IBinder;
+import android.widget.Toast;
+public class MyService extends Service {
+ MediaPlayer myPlayer;
+ @Override
+ public IBinder onBind(Intent intent) {
+  return null;
+ }
+ @Override
+ public void onCreate() {
+  Toast.makeText(this, "Service Created", Toast.LENGTH_LONG).show();
+ 
+  myPlayer = MediaPlayer.create(this, R.raw.sun);
+  myPlayer.setLooping(false); // Set looping
+ }
+ @Override
+ public void onStart(Intent intent, int startid) {
+  Toast.makeText(this, "Service Started", Toast.LENGTH_LONG).show();
+  myPlayer.start();
+ }
+ @Override
+ public void onDestroy() {
+  Toast.makeText(this, "Service Stopped", Toast.LENGTH_LONG).show();
+  myPlayer.stop();
+ }
+}
+</textarea></div>
+
+<hr>
+<h4 class="h4">Activity class</h4>
+<p>Now create the MainActivity class to perform event handling. Here, we
+ are writing the code to start and stop service. Additionally, calling 
+the second activity on buttonNext.</p>
+<div class="filename">File: MainActivity.java</div>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="keyword">package</span><span>&nbsp;com.example.serviceexampleaudio;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;android.app.Activity;&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;android.content.Intent;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;android.os.Bundle;&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;android.view.View;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;android.view.View.OnClickListener;&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;android.widget.Button;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;MainActivity&nbsp;</span><span class="keyword">extends</span><span>&nbsp;Activity&nbsp;</span><span class="keyword">implements</span><span>&nbsp;OnClickListener&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Button&nbsp;buttonStart,&nbsp;buttonStop,buttonNext;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Override</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;onCreate(Bundle&nbsp;savedInstanceState)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">super</span><span>.onCreate(savedInstanceState);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setContentView(R.layout.activity_main);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buttonStart&nbsp;=&nbsp;(Button)&nbsp;findViewById(R.id.buttonStart);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buttonStop&nbsp;=&nbsp;(Button)&nbsp;findViewById(R.id.buttonStop);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buttonNext&nbsp;=&nbsp;(Button)&nbsp;findViewById(R.id.buttonNext);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buttonStart.setOnClickListener(<span class="keyword">this</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buttonStop.setOnClickListener(<span class="keyword">this</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buttonNext.setOnClickListener(<span class="keyword">this</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;onClick(View&nbsp;src)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">switch</span><span>&nbsp;(src.getId())&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span><span>&nbsp;R.id.buttonStart:&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startService(<span class="keyword">new</span><span>&nbsp;Intent(</span><span class="keyword">this</span><span>,&nbsp;MyService.</span><span class="keyword">class</span><span>));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span><span>&nbsp;R.id.buttonStop:&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stopService(<span class="keyword">new</span><span>&nbsp;Intent(</span><span class="keyword">this</span><span>,&nbsp;MyService.</span><span class="keyword">class</span><span>));&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span><span>&nbsp;R.id.buttonNext:&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Intent&nbsp;intent=<span class="keyword">new</span><span>&nbsp;Intent(</span><span class="keyword">this</span><span>,NextPage.</span><span class="keyword">class</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startActivity(intent);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><textarea style="display: none;" name="code" class="java">package com.example.serviceexampleaudio;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+public class MainActivity extends Activity implements OnClickListener {
+	 Button buttonStart, buttonStop,buttonNext;
+	 @Override
+	 public void onCreate(Bundle savedInstanceState) {
+	  super.onCreate(savedInstanceState);
+	  setContentView(R.layout.activity_main);
+
+	  buttonStart = (Button) findViewById(R.id.buttonStart);
+	  buttonStop = (Button) findViewById(R.id.buttonStop);
+	  buttonNext = (Button) findViewById(R.id.buttonNext);
+
+	  buttonStart.setOnClickListener(this);
+	  buttonStop.setOnClickListener(this);
+	  buttonNext.setOnClickListener(this);
+	 }
+	 public void onClick(View src) {
+	  switch (src.getId()) {
+	  case R.id.buttonStart:
+	   startService(new Intent(this, MyService.class));
+	   break;
+	  case R.id.buttonStop:
+	   stopService(new Intent(this, MyService.class));
+	   break;
+	  case R.id.buttonNext:
+	   Intent intent=new Intent(this,NextPage.class);
+	   startActivity(intent);
+	   break;
+	  }
+	 }
+}
+</textarea></div>
+<hr>
+
+
+<h4 class="h4">NextPage class</h4>
+<p>Now, create another activity.</p>
+<div class="filename">File: NextPage.java</div>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-j" start="1"><li class="alt"><span><span class="keyword">package</span><span>&nbsp;com.example.serviceexampleaudio;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;android.app.Activity;&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;android.os.Bundle;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;NextPage&nbsp;</span><span class="keyword">extends</span><span>&nbsp;Activity&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;<span class="annotation">@Override</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;onCreate(Bundle&nbsp;savedInstanceState)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;<span class="keyword">super</span><span>.onCreate(savedInstanceState);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;setContentView(R.layout.activity_next);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol></div><textarea style="display: none;" name="code" class="java">package com.example.serviceexampleaudio;
+import android.app.Activity;
+import android.os.Bundle;
+
+public class NextPage extends Activity {
+ @Override
+ public void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_next);
+ }
+}
+</textarea></div>
+<hr>
+<h4 class="h4">Declare the Service in the AndroidManifest.xml file </h4>
+<p>Finally, declare the service in the manifest file.</p>
+<div class="filename">File: AndroidManifest.xml</div>
+<p>Let's see the complete AndroidManifest.xml file</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="#" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;"></a><a href="#" onclick="dp.sh.Toolbar.Command('About',this);return false;"></a></div></div><ol class="dp-xml" start="1"><li class="alt"><span><span class="tag">&lt;?</span><span class="tag-name">xml</span><span>&nbsp;</span><span class="attribute">version</span><span>=</span><span class="attribute-value">"1.0"</span><span>&nbsp;</span><span class="attribute">encoding</span><span>=</span><span class="attribute-value">"utf-8"</span><span class="tag">?&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="tag">&lt;</span><span class="tag-name">manifest</span><span>&nbsp;</span><span class="attribute">xmlns:androclass</span><span>=</span><span class="attribute-value">"http://schemas.android.com/apk/res/android"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">package</span><span>=</span><span class="attribute-value">"com.example.serviceexampleaudio"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:versionCode</span><span>=</span><span class="attribute-value">"1"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:versionName</span><span>=</span><span class="attribute-value">"1.0"</span><span>&nbsp;</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">uses-sdk</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:minSdkVersion</span><span>=</span><span class="attribute-value">"8"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:targetSdkVersion</span><span>=</span><span class="attribute-value">"17"</span><span>&nbsp;</span><span class="tag">/&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">application</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:allowBackup</span><span>=</span><span class="attribute-value">"true"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:icon</span><span>=</span><span class="attribute-value">"@drawable/ic_launcher"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:label</span><span>=</span><span class="attribute-value">"@string/app_name"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:theme</span><span>=</span><span class="attribute-value">"@style/AppTheme"</span><span>&nbsp;</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">activity</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:name</span><span>=</span><span class="attribute-value">"com.example.serviceexampleaudio.MainActivity"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:label</span><span>=</span><span class="attribute-value">"@string/app_name"</span><span>&nbsp;</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">intent-filter</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">action</span><span>&nbsp;</span><span class="attribute">android:name</span><span>=</span><span class="attribute-value">"android.intent.action.MAIN"</span><span>&nbsp;</span><span class="tag">/&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">category</span><span>&nbsp;</span><span class="attribute">android:name</span><span>=</span><span class="attribute-value">"android.intent.category.LAUNCHER"</span><span>&nbsp;</span><span class="tag">/&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">intent-filter</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">activity</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">service</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:name</span><span>=</span><span class="attribute-value">".MyService"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:enabled</span><span>=</span><span class="attribute-value">"true"</span><span>&nbsp;</span><span class="tag">/&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;</span><span class="tag-name">activity</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="attribute">android:name</span><span>=</span><span class="attribute-value">".NextPage"</span><span class="tag">/&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">&lt;/</span><span class="tag-name">application</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="tag">&lt;/</span><span class="tag-name">manifest</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;</span></span></li></ol></div><textarea style="display: none;" name="code" class="xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest xmlns:androclass="http://schemas.android.com/apk/res/android"
+    package="com.example.serviceexampleaudio"
+    android:versionCode="1"
+    android:versionName="1.0" &gt;
+
+    &lt;uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" /&gt;
+
+    &lt;application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" &gt;
+        &lt;activity
+            android:name="com.example.serviceexampleaudio.MainActivity"
+            android:label="@string/app_name" &gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name="android.intent.action.MAIN" /&gt;
+
+                &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+        
+        &lt;service
+            android:name=".MyService"
+            android:enabled="true" /&gt;
+         &lt;activity
+            android:name=".NextPage"/&gt;
+    &lt;/application&gt;
+
+&lt;/manifest&gt;
+
+</textarea></div>
+<hr>
+
+<div id="download">
+<a href="https://www.javatpoint.com/src/android/ServiceExampleAudio.zip">download this android example</a>
+</div>
+
+
+<hr>
+<h4 class="h4">Output:</h4>
+<img src="Android%20Service%20Tutorial%20-%20javatpoint_files/service1.png" alt="android service example output 1">
+<img src="Android%20Service%20Tutorial%20-%20javatpoint_files/service2.png" alt="android service example output 2">
+
+
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="https://www.javatpoint.com/android-alarmmanager">Android AlarmManager</a></span>
+</div>
+
+
+<!-- link -->
+<br><br>
+<div id="bottomnext">
+
+<a style="float:left" class="next" href="https://www.javatpoint.com/android-popup-menu-example">← prev</a>
+<a style="float:right" class="next" href="https://www.javatpoint.com/android-alarmmanager">next →</a>
+</div>
+
+<br><br>
+
+<br><br>
+</td></tr>
+</tbody></table>
+</div>
+
+<script style="" async="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/adsbygoogle.js"></script>
+<!-- Cm_336x280_New -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="5592503653"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;"><ins id="aswift_3_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;width:336px;height:280px;" frameborder="0" height="280" width="336"></iframe></ins></ins></ins>
+<script style="">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<h2 class="h2">Please Share</h2>
+<a rel="nofollow" title="Facebook" target="_blank" href="http://www.facebook.com/sharer.php?u=https://www.javatpoint.com/android-service-tutorial"><img src="Android%20Service%20Tutorial%20-%20javatpoint_files/facebook32.png" alt="facebook"></a>
+<a rel="nofollow" title="Twitter" target="_blank" href="http://twitter.com/share?url=https://www.javatpoint.com/android-service-tutorial&amp;text=Android%20Service%20Tutorial%20-%20javatpoint"><img src="Android%20Service%20Tutorial%20-%20javatpoint_files/twitter32.png" alt="twitter"></a>
+<a rel="nofollow" title="Google+" target="_blank" href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=https://www.javatpoint.com/android-service-tutorial"><img src="Android%20Service%20Tutorial%20-%20javatpoint_files/google-plus32.png" alt="google plus"></a>
+<a rel="nofollow" title="Pinterest" target="_blank" href="https://www.pinterest.com/pin/create/button/?url=https://www.javatpoint.com/android-service-tutorial&amp;description=Android%20Service%20Tutorial%20-%20javatpoint"><img src="Android%20Service%20Tutorial%20-%20javatpoint_files/pinterest32.png" alt="pinterest"></a>
+<a rel="nofollow" title="Tumblr" target="_blank" href="http://www.tumblr.com/share/link?url=https://www.javatpoint.com/android-service-tutorial"><img src="Android%20Service%20Tutorial%20-%20javatpoint_files/tumblr32.png" alt="tumbler"></a>
+
+<!-- latest tutorials start -->
+<h2 class="h2">Learn Latest Tutorials</h2>
+<div class="firsthomecontent">
+
+<a href="https://www.javatpoint.com/framework7-tutorial">
+<div class="homecontent">
+<img src="Android%20Service%20Tutorial%20-%20javatpoint_files/framework7-home.jpg" alt="Framework7 tutorial"><span class="homespan">Framework7</span>
+</div>
+</a>
+
+<a href="https://www.javatpoint.com/phalcon-tutorial">
+<div class="homecontent">
+<img src="Android%20Service%20Tutorial%20-%20javatpoint_files/phalcon-home.jpg" alt="Phalcon tutorial"><span class="homespan">Phalcon</span>
+</div>
+</a>
+
+<a href="https://www.javatpoint.com/materialize-css-tutorial">
+<div class="homecontent">
+<img src="Android%20Service%20Tutorial%20-%20javatpoint_files/materialize-home.png" alt="Materialize CSS tutorial"><span class="homespan">Materialize</span>
+</div>
+</a>
+
+<a href="https://www.javatpoint.com/software-installation-in-ubuntu">
+<div class="homecontent">
+<img src="Android%20Service%20Tutorial%20-%20javatpoint_files/software-installation-in-ubuntu.png" alt="Software Installation in Ubuntu tutorial"><span class="homespan">In Ubuntu</span>
+</div>
+</a>
+
+
+</div>
+
+</div>
+
+
+<br><br><div class="mobilemenu" style="clear: both;">
+<script style="" async="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/adsbygoogle.js"></script><!-- responsivemobilefooter --><ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4699858549023382" data-ad-slot="8222866318" data-ad-format="auto"></ins><script style="">(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></div>
+<div id="right" style="width:15%;float:left;margin-left:10px;margin-top:10px;">
+
+<script style="" async="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/adsbygoogle.js"></script>
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="3155368314"><ins id="aswift_4_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent;"><ins id="aswift_4_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;width:160px;height:600px;" frameborder="0" height="600" width="160"></iframe></ins></ins></ins>
+<script style="">(adsbygoogle = window.adsbygoogle || []).push({});</script><br><br><br>
+
+
+
+
+<br><br>
+
+<script style="" async="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/adsbygoogle.js"></script>
+<!-- Cm_Sidebar_160x600_New -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="5265076881"><ins id="aswift_5_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent;"><ins id="aswift_5_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;width:160px;height:600px;" frameborder="0" height="600" width="160"></iframe></ins></ins></ins>
+<script style="">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><div fi-instance-id="fiInstance_107545_0_7017992" style="position: static; top: auto; left: auto; float: left; clear: both;" id="FIOnDemandWrapper_fiInstance_107545_0_7017992" class="FIOnDemandWrapper"><div class="apd_docked_instance"><div style="z-index: 10000000; position: absolute; display: none; height: 17px; padding: 0px 5px; margin: 0px; background-color: rgb(115, 108, 108); color: rgb(255, 255, 255); cursor: pointer; opacity: 1; bottom: 100%; left: 0px; top: 600px; border-bottom-left-radius: 4px; border-bottom-right-radius: 0px;"><span style="display: block; line-height: 14px; height: 20px; vertical-align: middle; padding: 2px; color: rgb(255, 255, 255); font-family: Arial; text-shadow: 1px 1px 2px black; font-size: 12px; text-align: center; white-space: nowrap;">Close</span></div><div style="margin: 0px auto; clip: auto; height: 600px; width: 120px;" class="apd_docked_banner "><script style="">
+    FI.state.widestElement  = fiQuery('div.onlycontent :visible:height(>1):first').width();
+    fiQuery('div.onlycontent *:visible:height(>1),div.onlycontent iframe').each(function(i,e){ 
+        if (FI.state.widestElement < fiQuery(e).width()) {
+            FI.state.widestElement =  fiQuery(e).width();
+        }
+    });
+    if (FI.state.widestElement > fiQuery('div.onlycontent').width()) {
+        FI.state.widestElement = (FI.state.widestElement - fiQuery('div.onlycontent').width()) + 5;
+    } else if (FI.state.widestElement == fiQuery('div.onlycontent').width()) {
+        FI.state.widestElement = 27;
+    } else {
+        FI.state.widestElement = 0;
+    }
+    
+    fiQuery(window).on('placementVisibleComplete_fiInstance_107545_0_7017992',function(){
+        if (FI.state.widestElement != 0) fiQuery('div#FIOnDemandWrapper_fiInstance_107545_0_7017992').append('<style>div#FIOnDemandWrapper_fiInstance_107545_0_7017992[style*=fixed] > div.apd_docked_instance { transform:translateX(' + FI.state.widestElement + 'px); }</style>');
+    });
+</script><!-- Real-time ADX tag v1.0 --><ins data-adsbygoogle-status="done" class="adsbygoogle" data-ad-client="ca-pub-3622156405313063" style="display:inline-block;width:120px;height:600px" data-ad-slot="e270866.ae6e635"><ins id="aswift_7_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px;background-color:transparent;"><ins id="aswift_7_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_7" name="aswift_7" style="left:0;position:absolute;top:0;width:120px;height:600px;" frameborder="0" height="600" width="120"></iframe></ins></ins></ins></div></div><style>div#FIOnDemandWrapper_fiInstance_107545_0_7017992[style*=fixed] > div.apd_docked_instance { transform:translateX(27px); }</style></div>
+
+
+</div>
+<div class="right1024" style="float: left; margin-left: 10px; margin-top: 120px;"><script style="" async="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/adsbygoogle.js"></script><!-- right1024only --><ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:120px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="2180118716"><ins id="aswift_6_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px;background-color:transparent;"><ins id="aswift_6_anchor" style="display: block; border: medium none; height: 600px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 120px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_6" name="aswift_6" style="left:0;position:absolute;top:0;width:120px;height:600px;" frameborder="0" height="600" width="120"></iframe></ins></ins></ins><script style="">(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<br><br>
+</div>
+<br>
+<div id="footer" style="clear:both;width:100%">
+
+<!--<div style="width:100%;float:center;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#90715c,#523b1f);line-height:28px;">
+    <h2 style="padding:60px 0px 0px 20px">Summer Training</h2>
+    <p style="padding:0px 20px 60px 20px">JavaTpoint offers <strong>Summer Internship Training</strong> on Java, PHP, .Net, Hadoop, Data Analytics, R Programming, SAP, Android, Python, Oracle, Seleninum, Linux, C++ and many more technologies in Delhi/NCR, India. For more visit <a style="color:white" href="http://training.javatpoint.com"><img src="images/linkglobe12.png" alt="javatpoint training"/>training.javatpoint.com</a>
+    <br>
+    Course Fee: &#8377; 6000 Only<br>
+    Duration: 6 Week
+    </p>
+</div>
+-->
+<div style="width:100%;float:center;margin-top:10px;color:white;background-image: linear-gradient(145deg,#52a2fc,#480fcc);line-height:28px;">
+    <h2 style="padding:60px 0px 0px 20px">Website Development Services</h2>
+    <p style="padding:0px 20px 0px 20px">JavaTpoint (SSS IT Pvt Ltd) 
+provides website development services in affordable cost. We develop 
+websites on WordPress, Core PHP, CakePHP, CodeIgnitor, Open Cart, 
+Servlet-JSP, Struts 2 and Spring technologies. Send us your requirement 
+at hr@javatpoint.com. We will show you a free demo first, then we will 
+proceed further.
+    </p>
+    <table style="width:400px;padding:0px 20px 60px 20px">
+        <tbody><tr><td>Personal Blog</td><td>$150 Only</td></tr>
+        <tr><td>School Website</td><td>$200 Only</td></tr>
+        <tr><td>Company Website</td><td>$300 Only</td></tr>
+        <tr><td>Showroom Website</td><td>$300 Only</td></tr>
+        <tr><td>News Portal</td><td>$400 Only</td></tr>
+        <tr><td>E-Commerce Website</td><td>$500 Only</td></tr>
+        <tr><td>Multivendor E-Commerce (PHP)</td><td>$3000 Only</td></tr>
+        <tr><td>Multivendor E-Commerce (Java)</td><td>$18000 Approx</td></tr>
+        
+        <tr><td></td><td></td></tr>
+    </tbody></table>
+</div>
+<div style="width:100%;float:center;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#dc8140,#b16b15);line-height:28px;">
+    <h2 style="padding:60px 0px 0px 20px">Training For College Campus</h2>
+    <p style="padding:0px 20px 60px 20px">JavaTpoint offers college 
+campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, 
+Web Technology and Python. Please mail your requirement at 
+hr@javatpoint.com.
+    <br>
+    Course Fee: ₹ 2000 Per Student<br>
+    </p>
+</div>
+
+<!--<div class="homebox2">
+<h2>Our Initiatives</h2>
+<marquee behavior="alternate">
+<a rel="nofollow" href="https://www.hindi100.com">
+<div class="box2">
+<img class="box2img" src="https://www.hindi100.com/resources/images/javatpoint.png" alt="javatpoint"/>
+<p>Hindi100</p>
+</div>
+</a>
+
+<a rel="nofollow" href="https://www.lyricsia.com">
+<div class="box2">
+<img class="box2img" src="https://www.hindi100.com/resources/images/lyrics.png" alt="lyrics"/>
+<p>Lyricsia</p>
+</div>
+</a>
+
+<a rel="nofollow" href="http://www.hindi-typing.com">
+<div class="box2">
+<img class="box2img" src="https://www.hindi100.com/resources/images/hindi-typing.png" alt="hindi-typing"/>
+<p>Hindi-Typing</p>
+</div>
+</a>
+</marquee>
+</div>
+-->
+<script style="" type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-24880427-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script>
+<div style="margin-top:5px;text-align:center">
+    <sup style="font:16px arial;">Like/Subscribe us for latest updates or newsletter </sup>
+    <a target="_blank" href="https://feeds.feedburner.com/javatpointsonoo"><img src="Android%20Service%20Tutorial%20-%20javatpoint_files/rss1.png" alt="RSS Feed"></a>
+    <a target="_blank" href="https://feedburner.google.com/fb/a/mailverify?uri=javatpointsonoo"><img src="Android%20Service%20Tutorial%20-%20javatpoint_files/mail1.png" alt="Subscribe to Get Email Alerts"></a>
+    <a target="_blank" href="https://www.facebook.com/javatpoint"><img src="Android%20Service%20Tutorial%20-%20javatpoint_files/facebook1.jpg" alt="Facebook Page"></a>
+    <a target="_blank" href="https://plus.google.com/u/0/+javatpoint"><img src="Android%20Service%20Tutorial%20-%20javatpoint_files/google1.png" alt="Google Page"></a>
+    <a target="_blank" href="https://twitter.com/pagejavatpoint"><img src="Android%20Service%20Tutorial%20-%20javatpoint_files/twitter1.png" alt="Twitter Page"></a>
+    <a target="_blank" href="https://www.youtube.com/channel/UCUnYvQVCrJoFWZhKK3O2xLg"><img src="Android%20Service%20Tutorial%20-%20javatpoint_files/youtube32.png" alt="YouTube"></a>
+    <a target="_blank" href="https://javatpoint.blogspot.com/"><img src="Android%20Service%20Tutorial%20-%20javatpoint_files/blog.png" alt="Blog Page"></a>
+    <!--<a href="#" style="font:bold 18px arial;text-decoration:none;"><sup>&uarr;Top</sup></a>-->
+</div>
+
+<footer class="footer1">
+<div class="column4">
+<h3>Learn Tutorials</h3>
+<a href="https://www.javatpoint.com/java-tutorial">Learn Java Tutorial</a>
+<a href="https://www.javatpoint.com/c-programming-language-tutorial">Learn C Tutorial</a>
+<a href="https://www.javatpoint.com/cpp-tutorial">Learn C++ Tutorial</a>
+<a href="https://www.javatpoint.com/c-sharp-tutorial">Learn C# Tutorial</a>
+<a href="https://www.javatpoint.com/php-tutorial">Learn PHP Tutorial</a>
+<a href="https://www.javatpoint.com/html-tutorial">Learn HTML Tutorial</a>
+<a href="https://www.javatpoint.com/css-tutorial">Learn CSS Tutorial</a>
+<a href="https://www.javatpoint.com/javascript-tutorial">Learn JavaScript Tutorial</a>
+<a href="https://www.javatpoint.com/jquery-tutorial">Learn jQuery Tutorial</a>
+<a href="https://www.javatpoint.com/spring-tutorial">Learn Spring Tutorial</a>
+</div>
+<div class="column4">
+<h3>Our Websites</h3>
+<a rel="nofollow" target="_blank" href="https://www.javatpoint.com/">Javatpoint.com</a>
+<a rel="nofollow" target="_blank" href="https://www.hindi100.com/">Hindi100.com</a>
+<a rel="nofollow" target="_blank" href="https://www.lyricsia.com/">Lyricsia.com</a>
+<a rel="nofollow" target="_blank" href="https://www.quoteperson.com/">Quoteperson.com</a>
+<a rel="nofollow" target="_blank" href="http://www.hindi-typing.com/">Hindi-typing.com</a>
+<a rel="nofollow" target="_blank" href="http://www.shayaree.com/">Shayaree.com</a>
+<a rel="nofollow" target="_blank" href="https://www.wordcountee.com/">Wordcountee.com</a>
+<a rel="nofollow" target="_blank" href="https://www.charactercountee.com/">Charactercountee.com</a>
+<a rel="nofollow" target="_blank" href="https://www.jobandplacement.com/">Jobandplacement.com</a>
+</div>
+<div class="column4">
+<h3>Our Services</h3>
+<p>Website Development</p>
+<p>Android Development</p>
+<p>Website Designing</p>
+<p>Digital Marketing</p>
+<p>Summer Training</p>
+<p>Industrial Training</p>
+<p>College Campus Training</p>
+</div>
+<div class="column4">
+<h3>Contact</h3>
+<p>Address: G-13, 2nd Floor, Sec-3</p>
+<p>Noida, UP, 201301, India</p>
+<p>Contact No: 0120-4256464, 9990449935</p>
+<a href="https://www.javatpoint.com/contact-us">Contact Us</a> 
+<a href="https://www.javatpoint.com/subscribe.jsp">Subscribe Us</a> 
+<a href="https://www.javatpoint.com/privacy-policy">Privacy Policy</a>
+
+</div>
+</footer>
+
+<footer class="footer2">
+<p>© Copyright 2011-2017 www.javatpoint.com. All rights reserved.  <a rel="nofollow" target="_blank" href="https://www.sssit.org/">Developed by SSS IT Pvt Ltd (JavaTpoint)</a> </p>
+</footer>
+
+
+</div></div></div>
+<script style="" src="Android%20Service%20Tutorial%20-%20javatpoint_files/shcoreandbrush.js"></script><script style="" type="text/javascript" src="Android%20Service%20Tutorial%20-%20javatpoint_files/google.js"></script>
+<script style="" type="text/javascript"> dp.SyntaxHighlighter.HighlightAll('code'); </script>
+
+  <iframe style="display: none; width: 0px; height: 0px;" name="google_osd_static_frame" id="google_osd_static_frame_3106404720393"></iframe></body></html>

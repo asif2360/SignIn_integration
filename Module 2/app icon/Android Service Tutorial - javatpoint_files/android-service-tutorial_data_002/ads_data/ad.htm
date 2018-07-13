@@ -1,0 +1,326 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
+    @font-face {
+        font-family: 'AlwynNewRd';
+        src: url('https://s.hcurvecdn.com/fonts/AlwynNewRd-Rg.otf');
+    }
+</style> 
+<style type="text/css">
+
+	#box{
+		width: 160px;
+		height: 600px;
+		position: absolute;
+		overflow: hidden;
+		left:0px;
+		top:0px;
+		font-family: "AlwynNewRd";
+		user-select: none;
+		border:.3px solid;
+		cursor: pointer
+	}
+	.background{
+		width: 160px;
+		height: 600px;
+		position: absolute;
+		background-image: url("https://s.hcurvecdn.com/bigboss/BB11_160x600_v3.png");
+		background-size: cover;
+		overflow: hidden;
+    	background-position: center;
+    	background-repeat: no-repeat;
+    	/*background-color: #f7f900;*/
+	}
+	a{
+	    text-decoration: none;
+	}
+	
+	.list-item{
+		position: relative;
+		width:156px;
+		display: inline-block;
+		background: white;
+		height:88px;
+	}
+	.img{
+		height:88px;
+		width:156px;
+		background-size: cover;
+    	background-position: center;
+    	background-repeat: no-repeat;
+    	text-align: center;
+	}
+	.heading{
+		font-size: 10px;
+		background: #fcc7d4;
+		width: 100%;
+		text-align: left;
+		padding-top: 0px;
+		font-weight:500;
+		color: black;
+		letter-spacing: .3px
+	}
+	
+	.item-name{
+		width: 90px;
+		font-size: 9px;
+		text-align: left;
+		padding: 2px 0px 0px 0px;
+		height: 11px;
+		display: -webkit-box;
+        margin: 2px auto;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        color: white;
+        font-weight: 500;
+	}
+	
+	.grid {
+	    flex:1;
+	    display:flex;
+	    justify-content:space-between;
+	    flex-direction:column;
+	}
+	
+@keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0,0,0);
+  }
+
+  40%, 43% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  90% {
+    transform: translate3d(0,-4px,0);
+  }
+}
+
+.bounce {
+  animation-name: bounce;
+  transform-origin: center bottom;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+</style>
+</head><body>
+<div id="template" style="display:none">
+	<div class="background" style="z-index:100;pointer-events:none"> </div>
+	<div gdn-repeat="items" rows="4" cols="1" class="grid" style="margin:2px;margin-top:135px;height:465px">
+    	<div class="list-item" onclick="openUrl(event,'$(self_url)')" style="height:120px">
+		  <div style="position:absolute;margin-top:0px">
+			<div class="img" style="z-index:1000;background-image:url($(self_image))"></div>
+			<div class="item-name" style="z-index:100;left:2px;text-align:left;position:absolute;top:90px">$(self_heading)</div>
+		  </div>
+		</div>
+		
+	</div>
+<div style="pointer-events:none;font-size:16px;z-index:100;top:95px;position:absolute;text-align:center;width:160px;left:0px;color:white">Trending Moments</div>
+</div>
+<div id="box">
+	<div class="background" style="z-index:100;pointer-events:none"> </div>
+	<div gdn-repeat="items" rows="4" cols="1" class="grid" style="margin:2px;margin-top:135px;height:465px"><div style="display:flex;justify-content:space-between">
+    	<div class="list-item" onclick="openUrl(event,'https://www.voot.com/shows/bigg-boss-s11/11/538936/-just-ignore-akash-says-shilpa-/558502')" style="height:120px">
+		  <div style="position:absolute;margin-top:0px">
+			<div class="img" style="z-index:1000;background-image:url(https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_480,h_270/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_4_1_image_1514872525.jpg)"></div>
+			<div class="item-name" style="z-index:100;left:2px;text-align:left;position:absolute;top:90px">'Just ignore Akash', says Shilpa!</div>
+		  </div>
+		</div>
+		
+	</div><div style="display:flex;justify-content:space-between">
+    	<div class="list-item" onclick="openUrl(event,'https://www.voot.com/shows/bigg-boss-s11/11/538936/blame-game-all-around/558711')" style="height:120px">
+		  <div style="position:absolute;margin-top:0px">
+			<div class="img" style="z-index:1000;background-image:url(https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_480,h_270/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_11_2_image_1514872087.jpg)"></div>
+			<div class="item-name" style="z-index:100;left:2px;text-align:left;position:absolute;top:90px">Blame game all around</div>
+		  </div>
+		</div>
+		
+	</div><div style="display:flex;justify-content:space-between">
+    	<div class="list-item" onclick="openUrl(event,'https://www.voot.com/shows/bigg-boss-s11/11/538936/day-92-semi-finale-week-starts/558680')" style="height:120px">
+		  <div style="position:absolute;margin-top:0px">
+			<div class="img" style="z-index:1000;background-image:url(https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_480,h_270/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_0_image_1514871826.jpg)"></div>
+			<div class="item-name" style="z-index:100;left:2px;text-align:left;position:absolute;top:90px">Day 92: Semi finale week starts</div>
+		  </div>
+		</div>
+		
+	</div><div style="display:flex;justify-content:space-between">
+    	<div class="list-item" onclick="openUrl(event,'https://www.voot.com/shows/bigg-boss-s11/11/538936/day-89-vikas-mission-impossible-/557975')" style="height:120px">
+		  <div style="position:absolute;margin-top:0px">
+			<div class="img" style="z-index:1000;background-image:url(https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_480,h_270/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_3_image_1514871827.jpg)"></div>
+			<div class="item-name" style="z-index:100;left:2px;text-align:left;position:absolute;top:90px">Day 89: Vikas' mission impossible!</div>
+		  </div>
+		</div>
+		
+	</div></div>
+<div style="pointer-events:none;font-size:16px;z-index:100;top:95px;position:absolute;text-align:center;width:160px;left:0px;color:white">Trending Moments</div>
+</div>
+
+<script type="text/javascript">
+    
+    var json = {"adtag":"d22b82ee","bcamp":"notset","browser":"notset","btag":"notset","campaign":"none","cid":"1974","click_macro":"https://googleads.g.doubleclick.net/dbm/clk?sa=L\u0026ai=Cu-4f-EZLWsnxOsrg2ATDtK2oAajlhM9PyP3m0JoGyp7V6PAIEAEgrs-QKGDlgoCApA6gAaHYg5EDyAEJqQKrxerlcttQPqgDAaoEwwFP0Bqu2KMb5IaDW-6sp16wkUWdGERtX6OsYbxJnhcvlcMYwF0MnKoUsXDjp565GjEDESq1uErRzVUs3qRJzYIMdEMfyu0etUlLUkAcFjh6HkERERCXiK1BCcZWO5_WRPvdMQx9Z9gORzfJWOcklCcM6gx_6ogXdsZUZZinXdFSx3Qx7h8ktryU_Vgo0Dlfe2b2CzCXp8eD51G-L1U4-csiNgadDNQB9Qc-VlthzJqb9qdVksL6iVX-dMCQ1W32uwDAM_zgBAOQBgGgBk2AB8en_G6oB6a-G9gHANIIBwiAARABGAKACgHIE7TOnwLYExA\u0026num=1\u0026cid=CAASEuRo944SxkwdkaE9zD5Ks9dqZQ\u0026sig=AOD64_0nbE32CuIhlR_Ct6XliTRPESn1Fg\u0026client=ca-pub-4699858549023382\u0026dbm_c=AKAmf-CwMSQGgLkwkMiaDZDE9TQ8k4kDnNf7A-4ZEpJNoYQAZxWFSfYpUKP9zonv4Ld2dMpHaczK\u0026dbm_d=AKAmf-D_fFUdYGEkJdoueSYpB6gAJweab60DPydG2eFJiVIEDtF219H6VBjBi1QqGspwbsJszViVJVholRiOeVeIpE69fxJ8dIZM5Pu-grW71lzJdY2wxjD6c2DuIT5KJhV1lNAYXLYqfeYQFASJsvlMRbxWRYL5ATHifyL9CztO8b1-zn0-XjUp0-q0o9P50GTDB588oGwo5dy1aW6VS3SFTGmvnbAbW540gJx3Pv5496dp4U-v27o\u0026adurl=","client":"voot","creativedata":"[{\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/day-92-semi-finale-week-starts/558680\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_0_image_1514871826.jpg\", \"heading\": \"Day 92: Semi finale week starts\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/day-91-fun-start-to-2018/558335\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_1_image_1514871827.jpg\", \"heading\": \"Day 91: Fun start to 2018\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/day-90-who-got-evicted-/558196\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_2_image_1514871827.jpg\", \"heading\": \"Day 90: Who got evicted?\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/day-89-vikas-mission-impossible-/557975\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_3_image_1514871827.jpg\", \"heading\": \"Day 89: Vikas' mission impossible!\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/day-88-priyank-meets-his-mother/557702\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_4_image_1514871827.jpg\", \"heading\": \"Day 88: Priyank meets his mother\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/vikas-abandoned-by-all-/558753\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_4_0_image_1514872525.jpg\", \"heading\": \"Vikas, abandoned by all?\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/day-83-arshi-s-bigg-journey-ends-/556706\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_9_image_1514871827.jpg\", \"heading\": \"Day 83: Arshi's bigg journey ends!\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/day-87-akash-s-mother-breaks-down/557511\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_5_image_1514871827.jpg\", \"heading\": \"Day 87: Akash's mother breaks down\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/day-86-emotional-overdose/557213\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_6_image_1514871827.jpg\", \"heading\": \"Day 86: Emotional overdose\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/arshi-khan-spills-the-beans-/558302\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_2_1_image_1514788628.jpg\", \"heading\": \"Arshi Khan spills the beans!\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/day-85-priyank-in-trouble-/557035\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_7_image_1514871827.jpg\", \"heading\": \"Day 85: Priyank in trouble?\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/priyank-s-eviction-interview/558284\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_2_2_image_1514788628.jpg\", \"heading\": \"Priyank's eviction interview\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/day-84-christmas-with-mika-singh/556825\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_1_8_image_1514871827.jpg\", \"heading\": \"Day 84: Christmas with Mika Singh\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/new-year-resolutions/558286\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/individualMedias_2_0_image_1514788628.jpg\", \"heading\": \"New Year resolutions\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/hina-lost-a-diamond-ring-/558388\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_2_4_image_1514871978.jpg\", \"heading\": \"Hina lost a diamond ring?\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/nomination-with-a-twist-/558738\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_2_0_image_1514871978.jpg\", \"heading\": \"Nomination, with a twist!\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/you-ve-gone-too-far-akash/558717\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_11_1_image_1514872087.jpg\", \"heading\": \"You've gone too far Akash\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/blame-game-all-around/558711\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_11_2_image_1514872087.jpg\", \"heading\": \"Blame game all around\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/-just-ignore-akash-says-shilpa-/558502\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_4_1_image_1514872525.jpg\", \"heading\": \"'Just ignore Akash', says Shilpa!\"}, {\"url\": \"https://www.voot.com/shows/bigg-boss-s11/11/538936/best-moments-of-last-week/558737\", \"image\": \"https://viacom18-res.cloudinary.com/image/upload/f_auto,q_auto:eco,fl_lossy,w_218,h_123/dimg2/voot-cms/include/upload/web-v2-images/series/playlistMedias_1_0_image_1514871937.jpg\", \"heading\": \"Best moments of last week\"}]","device":"desktop","dimension":"160x600","domain":"notset","fcat":"content","hcid":"9959c082ec6e00a2c06def00c2a699ec","partner":"dbm","pdata":"{}","stats":"eyJhZHRhZyI6ImQyMmI4MmVlIiwiYmNhbXAiOiJub3RzZXQiLCJicm93c2VyIjoibm90c2V0IiwiYnRhZyI6Im5vdHNldCIsImNhbXBhaWduIjoibm9uZSIsImNpZCI6IjE5NzQiLCJjbGllbnQiOiJ2b290IiwiZGV2aWNlIjoiZGVza3RvcCIsImRpbWVuc2lvbiI6IjE2MHg2MDAiLCJkb21haW4iOiJub3RzZXQiLCJmY2F0IjoiY29udGVudCIsImhjaWQiOiI5OTU5YzA4MmVjNmUwMGEyYzA2ZGVmMDBjMmE2OTllYyIsInBhcnRuZXIiOiJkYm0iLCJ0b2tlbl9pZCI6ImYzNTBhMzliN2ZlNGZjNzFkZWZlMjQ0MzI5NDYxZGJmIn0=","token_id":"f350a39b7fe4fc71defe244329461dbf","udata":"{}"};
+    var _items = JSON.parse(json['creativedata'])
+    function shuffle(array) {
+      if(!array.length) return [];
+      var currentIndex = array.length, temporaryValue, randomIndex;
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+      return array;
+    }
+    Number.prototype.formatMoney = function(c, d, t){
+    var n = this, 
+        c = isNaN(c = Math.abs(c)) ? 2 : c, 
+        d = d == undefined ? "." : d, 
+        t = t == undefined ? "," : t, 
+        s = n < 0 ? "-" : "", 
+        i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", 
+        j = (j = i.length) > 3 ? j % 3 : 0;
+       return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "").replace(".00","");
+     };
+    var listitems = ""
+    var creativedata = [];
+    try{
+        var creativedata = shuffle(JSON.parse(json['pdata'].replace(",]","]")))
+    }catch(e){
+        creativedata = [];
+    }
+    var staticdata = shuffle(_items);
+    for(var i=0;i<staticdata.length;i++){
+        creativedata.push(staticdata[i])
+    }
+    var finaldata = []
+    for(var i=0;i<creativedata.length;i++){
+        finaldata.push(creativedata[i])
+    }
+    creativedata = finaldata;
+    function format(str,data){
+  return str.replace(/\$\([^\)]*\)/g,function(m,n){
+    var key = m.substr(2,m.length-3)
+    return data[key]==undefined? m : data[key]
+  })
+}
+
+
+window.onAdData = function(data){
+  var newdata = []
+  for(var i in data['items']){
+      var obj = data['items'][i]
+      if(obj['image'].indexOf('mastHead')!=-1)continue;
+      obj['image'] = obj['image'].replace('w_218','w_480').replace('h_123','h_270')
+      newdata.push(obj)
+  }
+  data['items'] = newdata
+  
+  var template = document.getElementById("template")
+  var box = document.getElementById("box")
+  box.innerHTML = template.innerHTML
+  var repeats = document.querySelectorAll("#box [gdn-repeat]");
+  for(var i=0;i<repeats.length;i++){
+    var repeat = repeats[i];
+    var key = repeat.getAttribute("gdn-repeat")
+    var template = repeat.innerHTML;
+    var nrows = repeat.getAttribute("rows")
+    var ncols = repeat.getAttribute("cols")
+    if(data[key]){
+      var html = ""
+      for(var r=0;r<nrows;r++){
+          var row = ""
+          for(var c=0;c<ncols;c++){
+            var obj = {}
+            var index = (r*ncols+c)%data[key].length
+            for(var k in data[key][index]){
+              obj["self_"+k] = data[key][index][k];
+            }
+            row += format(template,obj)
+          }
+          html += `<div style='display:flex;justify-content:space-between'>`+row+`</div>`
+      }
+      repeat.innerHTML = html
+    }
+  }
+  box.innerHTML = format(box.innerHTML,data)
+}
+onAdData({items:creativedata})
+
+function openUrl(e,url){
+    e.preventDefault()
+    e.stopPropagation()
+    // url = url.split("?")[0]
+    if(url.indexOf('utm_source')==-1){
+        var token = "?"
+        if(url.indexOf('?')!=-1) token='&';
+        url += token+"utm_source=dbm&utm_medium=cpm&utm_campaign=hockeycurve_bigboss11_desktop"
+    }
+    if(window.location.href.indexOf('=mobile')!=-1){
+        url = url.replace('_desktop','_mobile')
+    }
+    var target = json['click_macro'];
+    if(target){
+        url = "https://ad.hockeycurve.com/clk.php?redirect="+encodeURIComponent(url)+"&tracking="+encodeURIComponent(target)+"&stats="+encodeURIComponent(json['stats'])+"&token_id="+encodeURIComponent(json['token_id']);
+    }
+    window.open(url,"_blank")
+}
+ window.onclick = function(event){
+     openUrl(event,"https://www.voot.com/shows/bigg-boss/bigg-boss-season-11")
+}
+var count = 0
+function anim(){
+    count += 1
+    if (count > 30)return;
+    var first = creativedata[0]
+    creativedata = creativedata.slice(1,creativedata.length)
+    creativedata.push(first)
+    onAdData({items:creativedata})
+    setTimeout(anim,3000)
+}
+anim()
+
+var trigger_iframe = function(src){
+    try{
+        var body = document.getElementsByTagName('body')[0];
+        var iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.style['display'] = 'none'
+        body.appendChild(iframe);
+    }
+    catch(e){exception(e)}
+}
+var ishover = false;
+var triggered = false;
+function triggerHover(){
+    if(ishover && !triggered && json['click_macro']){
+        triggered = true;
+        trigger_iframe("piggyback?redirect=hcid&token_id="+json["token_id"]);
+        trigger_iframe("hover?redirect=hcid&stats="+json["stats"]+"&token_id="+json["token_id"]);
+    }
+}
+window.addEventListener("mouseover",function(){
+    if(!ishover){
+        ishover = true;
+        setTimeout(triggerHover,2000)
+    }
+})
+window.addEventListener("mouseout",function(){
+    ishover = false;
+})
+
+
+console.log('popular')
+</script>
+<a target="_blank" href="http://hockeycurve.com/optout.html"><div style="font-size:10px;position:absolute;right:0px;top:0px;z-index:10000;cursor:pointer;">
+    <img src="../../android-service-tutorial_data_007/ads_data/ad_data/logo.png" title="optout">
+</div></a>
+</body></html>
